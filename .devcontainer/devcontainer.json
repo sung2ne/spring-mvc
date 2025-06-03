@@ -1,13 +1,11 @@
 {
   "name": "JDK8-Maven-MariaDB-phpMyAdmin",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
-  "forwardPorts": [3306, 8080, 80],
-  "postCreateCommand": "service mariadb start && service apache2 start",
+  "dockerComposeFile": ["../docker-compose.yml"],
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [3306, 8080],
   "customizations": {
     "vscode": {
-      "settings": {},
       "extensions": [
         "vscjava.vscode-java-pack",
         "ms-azuretools.vscode-docker"
